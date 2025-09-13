@@ -26,13 +26,14 @@ public class MinimumWindowSubString_76 {
 
     public static boolean containsChars(String s, String t) {
         int[] chars = new int[256];
-        for (char c : t.toCharArray())
-            chars[c - 'a']++;
         for (char c : s.toCharArray())
-            chars[c - 'a']--;
-        for (char c : t.toCharArray())
-            if (chars[c - 'a'] > 0)
+            chars[c - 'A']++;
+        for (char c : t.toCharArray()) {
+            chars[c - 'A']--;
+            if (chars[c - 'A'] < 0)
                 return false;
+
+        }
 
         return true;
     }
