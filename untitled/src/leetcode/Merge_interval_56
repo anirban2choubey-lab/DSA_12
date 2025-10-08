@@ -1,0 +1,16 @@
+//    We are given a list of intervals. If any intervals overlap, we want to merge them into one.
+
+intuition -
+//    Sorting by start time allows us to scan through and merge overlapping intervals on the go.
+//we can imagine a chain here ,
+//so the beginning of the next naught should be between start point & end point of the previous naught
+// so we check if the first element of the second array is between 2 oints of first array, if yes we will merge them
+
+
+//    Approach -
+//    Sort intervals by starting time.
+//    Initialize a prev interval.
+//    Iterate through the intervals:
+//    If current interval overlaps with prev, merge them by updating the end time.
+//    Else, add prev to result and update prev.
+//    After loop ends, add the last prev.
