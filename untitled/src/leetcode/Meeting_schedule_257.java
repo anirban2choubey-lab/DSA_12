@@ -77,7 +77,7 @@ public class Meeting_schedule_257 {
             // Add the current meeting's end time to the heap.
             endTimes.offer(currentMeeting.end);
         }
-
+//Arrays.sort(intervals,Comparator.comparingInt());
         // The size of the heap at the end represents the maximum number of
         // simultaneous meetings, which is the minimum number of days required.
         return endTimes.size();
