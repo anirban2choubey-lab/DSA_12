@@ -9,14 +9,18 @@ public class TwoSum {
     }
 
     public int[] twoSum(int[] nums, int target) {
+        int[] res = new int[2];
         Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
-        for (int i = 0; i < nums.length; i++)
-            hm.put(nums[i], i);
-
         for (int i = 0; i < nums.length; i++) {
-            if (hm.containsKey(target - nums[i]) && hm.get(target - nums[i]) != nums[i])
-                return new int[]{i, hm.get(target - nums[i])};
+            int el = nums[i];
+            if (hm.containsKey(target - el)) {
+                res[0] = hm.get(target - el);
+                res[1] = i;
+                return res;
+            } else
+                hm.put(el, i);
         }
+
         return new int[]{};
     }
 
