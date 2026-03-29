@@ -24,9 +24,9 @@ public class MinimumWindowSubString_76 {
         return minWindow.length() > s.length() ? "" : minWindow;
     }
 
-    public static boolean containsChars(String s, String t) {
+    public static boolean containsChars(String temp, String t) {
         int[] chars = new int[256];
-        for (char c : s.toCharArray())
+        for (char c : temp.toCharArray())
             chars[c - 'A']++;
         for (char c : t.toCharArray()) {
             chars[c - 'A']--;
