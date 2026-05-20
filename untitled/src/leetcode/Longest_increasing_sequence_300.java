@@ -16,16 +16,15 @@ public class Longest_increasing_sequence_300 {
         int maxLength = 0;
         int size = 0;
         for (int i = 0; i < nums.length; i++) {
-            int left = 0, right = size, el = nums[i];
+            int left = 0, right = size, num = nums[i];
             while (left < right) {
                 int mid = (left + right) / 2;
-                if (nums[mid] <= el)
+                if (nums[mid] <= num)
                     left = mid + 1;
-
                 else
                     right = mid;
             }
-            tails[left] = el;
+            tails[left] = num;
             if (left == size)
                 size++;
         }
