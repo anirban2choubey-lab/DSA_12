@@ -24,22 +24,7 @@ public class LongestCommonSubsequence_2d_dp_1143 {
         return dp[m][n];
     }
 
-    public boolean canPartition(int[] nums) {
-        Arrays.sort(nums);
-        int l = 0, r = nums.length - 1;
-        int leftSum = 0, rightSum = 0;
 
-        while (l < r) {
-            leftSum += nums[l];
-            rightSum += nums[r];
-            if (leftSum==rightSum)
-                return true;
-            if (leftSum<rightSum)
-                l++;
-            else
-                r++;
-        }
-    }
 }
 
 
